@@ -95,6 +95,51 @@ def evaluate_resume():
         response_json = {'error': 'Failed to decode response from generative AI'}
 
     return jsonify(response_json)
+@app.route('/evaluate_bulk_resumes', methods=['POST'])
+def evaluate_bulk_resumes():
+    # Check if the user is logged in
+    if 'user' not in session:
+        return jsonify({'error': 'Unauthorized access'}), 401
+
+    if 'files' not in request.files or 'job_description' not in request.form:
+        return jsonify({'error': 'Missing files or job description'}), 400
+
+    uploaded_files = request.files.getlist('files')
+    job_description = request.form['job_description']
+
+    leaderboard = []
+
+    for uploaded_file in uploaded_files:
+        if uploaded_file.filename == '':
+            continue
+
+        if not uploaded_file.filename.lower().endswith('.pdf'):
+            continue
+
+        text = input_pdf_text(uploaded_file)
+
+        if not text:
+            continue
+
+        input_prompt = input_prompt_template.format(text=text, jd=job_description)
+        response = get_gemini_response(input_prompt)
+
+
+        try:
+            response_json = json.loads(response)
+            match_score = float(response_json.get("JD Match", "0").strip('%'))
+            leaderboard.append({
+                'filename': uploaded_file.filename,
+                'match_score': match_score,
+                'response': response_json
+            })
+        except (json.JSONDecodeError, ValueError, TypeError):
+            continue
+
+    # Sort leaderboard by match_score in descending order
+    leaderboard.sort(key=lambda x: x['match_score'], reverse=True)
+
+    return jsonify(leaderboard)
 
 @app.route('/signup', methods=['POST'])
 def signup():
