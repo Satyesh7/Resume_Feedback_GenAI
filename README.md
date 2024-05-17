@@ -9,3 +9,11 @@ SATS is an advanced applicant tracking system designed to revolutionize the recr
 - **Leaderboard System:** Implements a leaderboard to rank candidates based on match scores, facilitating efficient recruitment by highlighting top matches.
 
 Join us in shaping the future of recruitment with SATS!
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
