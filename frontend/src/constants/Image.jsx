@@ -1,0 +1,1 @@
+export const res = "https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/78f7f9b3-0630-4fa0-aade-03027b6d9fac/DallEGeneratedImages/dalle-48c6f197-69c3-49f4-99b7-ba67b67688cd0251686358675054412900.jpg&dcHint=JapanEast&fileToken=afe8fbe2-36db-4961-9738-eefe073e6ca3"
