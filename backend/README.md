@@ -7,9 +7,9 @@ This is a Flask backend application that runs on localhost:5000.
 To set up the environment for this application, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Navigate to the project directory: 
+2. Navigate to the `backend` directory: 
     ```
-    cd /SATS/backend
+    cd /backend
     ```
 3. Setup .env 
 4. Install the required dependencies: 
