@@ -7,9 +7,18 @@ This is a frontend React app built using Vite.
 To get started with the app, follow these steps:
 
 1. Clone the repository.
-2. Navigate to the `frontend` directory: `cd frontend`.
-3. Install the dependencies: `npm install`.
-4. Start the development server: `npm run dev`.
+2. Navigate to the `frontend` directory: 
+    ```
+    cd frontend
+    ```
+3. Install the dependencies: 
+    ```
+    npm install
+    ```
+4. Start the development server: 
+    ```
+    npm run dev
+    ```
 
 ## Available Scripts
 
