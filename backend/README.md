@@ -9,7 +9,7 @@ To set up the environment for this application, follow these steps:
 1. Clone the repository to your local machine.
 2. Navigate to the `backend` directory: 
     ```
-    cd /backend
+    cd backend
     ```
 3. Setup .env 
 4. Install the required dependencies: 
