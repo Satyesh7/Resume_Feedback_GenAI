@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
 
 const Resume = () => {
   const [file, setFile] = useState(null);
@@ -62,9 +63,9 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold mb-4">Upload Your Resume</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 p-4">
+      <h1 className="text-3xl font-bold text-white mb-4">Upload Your Resume</h1>
+      <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4 bg-white p-6 rounded-lg shadow-md">
         <input 
           type="file" 
           accept="application/pdf" 
@@ -82,7 +83,7 @@ const Resume = () => {
         </button>
       </form>
       {error && <p className="text-red-500 mt-2">{error}</p>}
-      {result && (
+      {result ? (
         <div className="bg-gray-200 p-4 mt-4 rounded" style={{ maxHeight: 'calc(100vh - 250px)', overflow: 'auto' }}>
           <h2 className="text-xl font-semibold mb-2">JD Match: {result['JD Match']}</h2>
           {result['MissingKeywords'] && result['MissingKeywords'].length > 0 && (
@@ -97,6 +98,30 @@ const Resume = () => {
           )}
           <h2 className="text-xl font-semibold mb-2">Profile Summary:</h2>
           <p>{result['Profile Summary']}</p>
+        </div>
+      ) : (
+        <div className="bg-white p-6 mt-4 rounded-lg shadow-md flex flex-row items-center space-x-6">
+          <div className="flex items-center space-x-2">
+            <i className="fas fa-key text-blue-500 text-3xl"></i>
+            <div className="flex flex-col items-start">
+              <h2 className="text-xl font-semibold">Missing Keywords</h2>
+              <p className="text-gray-500">No data available yet</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <i className="fas fa-check-circle text-green-500 text-3xl"></i>
+            <div className="flex flex-col items-start">
+              <h2 className="text-xl font-semibold">JD Match</h2>
+              <p className="text-gray-500">No data available yet</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <i className="fas fa-user text-purple-500 text-3xl"></i>
+            <div className="flex flex-col items-start">
+              <h2 className="text-xl font-semibold">Profile Summary</h2>
+              <p className="text-gray-500">No data available yet</p>
+            </div>
+          </div>
         </div>
       )}
     </div>
