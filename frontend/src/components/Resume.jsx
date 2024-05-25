@@ -85,11 +85,11 @@ const Resume = () => {
       {result && (
         <div className="bg-gray-200 p-4 mt-4 rounded" style={{ maxHeight: 'calc(100vh - 250px)', overflow: 'auto' }}>
           <h2 className="text-xl font-semibold mb-2">JD Match: {result['JD Match']}</h2>
-          {result['Missing Keywords'] && result['Missing Keywords'].length > 0 && (
+          {result['MissingKeywords'] && result['MissingKeywords'].length > 0 && (
             <>
               <h2 className="text-xl font-semibold mb-2">Missing Keywords:</h2>
               <ul>
-                {result['Missing Keywords'].map((keyword, index) => (
+                {result['MissingKeywords'].map((keyword, index) => (
                   <li key={index}>{keyword}</li>
                 ))}
               </ul>
