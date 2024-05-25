@@ -61,8 +61,8 @@ I want the response in one single string having the structure
 @app.route('/evaluate_resume', methods=['POST'])
 def evaluate_resume():
     # Check if the user is logged in
-    if 'user' not in session:
-        return jsonify({'error': 'Unauthorized access'}), 401
+    #if 'user' not in session:
+        #return jsonify({'error': 'Unauthorized access'}), 401
 
     if 'file' not in request.files or 'job_description' not in request.form:
         return jsonify({'error': 'Missing file or job description'}), 400

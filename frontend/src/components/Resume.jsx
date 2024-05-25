@@ -84,7 +84,19 @@ const Resume = () => {
       {error && <p className="text-red-500 mt-2">{error}</p>}
       {result && (
         <div className="bg-gray-200 p-4 mt-4 rounded" style={{ maxHeight: 'calc(100vh - 250px)', overflow: 'auto' }}>
-          <pre>{JSON.stringify(result, null, 2)}</pre>
+          <h2 className="text-xl font-semibold mb-2">JD Match: {result['JD Match']}</h2>
+          {result['MissingKeywords'] && result['MissingKeywords'].length > 0 && (
+            <>
+              <h2 className="text-xl font-semibold mb-2">Missing Keywords:</h2>
+              <ul>
+                {result['MissingKeywords'].map((keyword, index) => (
+                  <li key={index}>{keyword}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          <h2 className="text-xl font-semibold mb-2">Profile Summary:</h2>
+          <p>{result['Profile Summary']}</p>
         </div>
       )}
     </div>
