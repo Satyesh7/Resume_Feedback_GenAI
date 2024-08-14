@@ -14,11 +14,11 @@ Join us in shaping the future of recruitment with SATS!
 
 Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
 
-##Team Members
--Satyesh Das
--Jaimin Godhani
--Akshyat Pathak
--Shrey Pant
+## Team Members
+- **Satyesh Das**
+- **Jaimin Godhani**
+- **Akshyat Pathak**
+- **Shrey Pant**
 
 ## License
 
